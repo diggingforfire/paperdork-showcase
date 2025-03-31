@@ -9,7 +9,20 @@ internal sealed class AccountConfiguration : IEntityTypeConfiguration<Account>
     public void Configure(EntityTypeBuilder<Account> builder)
     {
         builder.HasKey(account => account.Id);
-        builder.HasOne(account => account.Company);
+        
+        builder
+            .Property(account => account.Reference)
+            .HasMaxLength(50)
+            .IsRequired();
 
+        builder
+            .Property(account => account.Name)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder
+            .HasMany(account => account.TransactionDetails)
+            .WithOne(transaction => transaction.Account)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

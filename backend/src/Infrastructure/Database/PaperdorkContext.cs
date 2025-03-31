@@ -1,5 +1,6 @@
 ﻿using Application;
 using Domain.Accounts;
+using Domain.Transactions;
 using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,8 @@ public sealed class PaperdorkContext(DbContextOptions<PaperdorkContext> options)
 {
     public DbSet<Company> Companies { get; set; }
     public DbSet<Account> Accounts { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<TransactionDetail> TransctionDetails { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
