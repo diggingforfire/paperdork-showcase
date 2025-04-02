@@ -1,4 +1,4 @@
-This repository contains a little showcase with some tech relevant to the Paperdork tech stack. It's not meant to be functionally impressive, but rather a means to to talk about architectural choices, libraries, conceptual approaches and tech in general. The backend folder contains a .NET 9 minimal API project with a simple data model. The frontend folder contains nothing as of yet.
+This repository contains a little showcase with some tech relevant to the Paperdork tech stack. It's not meant to be functionally impressive, but rather a means to talk about architectural choices, libraries, conceptual approaches and tech in general. The backend folder contains a .NET 9 minimal API project with a simple data model. The frontend folder contains nothing as of yet.
 
 ## Backend
 
@@ -38,6 +38,8 @@ Other stuff that I haven't managed to put in here, but I think may be useful dep
 
 * [Serilog](https://serilog.net/)
 * [OpenTelemetry](https://opentelemetry.io/)
+
+### Summary
 
 ## Frontend
 
