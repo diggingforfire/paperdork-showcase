@@ -44,6 +44,6 @@ Other stuff that I haven't managed to put in here, but I think may be useful dep
 I haven't had time yet to do anything here, but this could be a little demo project with [Vite](https://vite.dev/guide/) and [Vue](https://vuejs.org/).
 
 
-### Testing and quality
+## Testing and quality
 
 I like using a test-first approach where testability enforces a good decoupled design. I would strive for a healthy mix between unit tests (more isolated, faster, less coverage), integration tests (units combined), and end-to-end tests (slow, no mocks, as real as possible, a lot of coverage). As long as you can deploy fast, often and consistently, you probably have enough test coverage.
