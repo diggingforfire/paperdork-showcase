@@ -11,6 +11,8 @@ In the basis, the backend follows a Clean (or Onion) architecture template. That
 
 In general, I like to combine this approach with vertical slices where a project structure is based on functionaliy, rather than technical categories.
 
+### CQRS and MediatR
+
 ### Data model
 
 I am by no means an accountant, but I scaffolded a very simple data model to have something to work with:
@@ -18,15 +20,14 @@ I am by no means an accountant, but I scaffolded a very simple data model to hav
 * Data model here
 
 
-### Infra
+### Cloud infra
 
 ### Other stuff
 
-Other stuff that I haven't managed to put in here, but I think may be useful depending on your requirements:
+Other stuff that I haven't managed to put in here, but I think may be useful depending on context and requirements (as always, 'it depends'):
 
-* 1
-* 2
-* 3
+* [Serilog](https://serilog.net/)
+* [OpenTelemtry](https://opentelemetry.io/)
 
 ## Frontend
 
