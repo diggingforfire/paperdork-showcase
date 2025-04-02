@@ -5,7 +5,9 @@ This repository contains a little showcase with some tech relevant to the Paperd
 A .NET 9 minimal API project based on Clean Architecture.
 
 ### Architecture
-I really like the [C4 model for visualising software architecture](https://c4model.com/) to, well, visualise software architecture. The nice thing about the C4 model is that it is a rather lightweight means of reasoning about architecture at different abstraction levels, but it doesn't prescribe much in the way of notation (like UML does). 
+I really like the [C4 model for visualising software architecture](https://c4model.com/) to, well, visualise software architecture. The nice thing about the C4 model is that it is a rather lightweight means of reasoning about architecture at different abstraction levels, but it doesn't prescribe much in the way of notation (like UML does). A simple (partial) C4 diagram of this project with a bunch of assumptions:
+
+* Diagram here
 
 In the basis, the backend follows a Clean (or Onion) architecture template. That is to say, the layering follows a specific pattern where domain entities live at the center. These are referenced by an application layer (which contains functional use cases, or commands and queries), which in turn is referenced by an outside layer that contains 'everything else' (i.e., presentation, infra etc). Everything is wired together using dependency injection.
 
@@ -13,7 +15,7 @@ In general, I like to combine this approach with vertical slices where a project
 
 ### CQRS and MediatR
 
-Generally, I like the pattern of distinguishing between reads (queries) and writes (commands). [CQRS](https://martinfowler.com/bliki/CQRS.html) makes this more explicit, but I don't think it's absolutely necessary to achieve this pattern of separation. It depends on the project and team whether you want to enforce this using CQRS, and whether it's worth the extra code and abstraction. 
+I like the pattern of distinguishing between reads (queries) and writes (commands). [CQRS](https://martinfowler.com/bliki/CQRS.html) makes this more explicit, but I don't think it's absolutely necessary to achieve this pattern of separation. It depends on the project and team whether you want to enforce this using CQRS, and whether it's worth the extra code and abstraction. 
 
 The same can be said for using [MediatR](https://github.com/jbogard/MediatR), a great library that implements the mediator pattern and facilitates decoupling. It also adds a layer of indirection however, and makes things a bit harder to follow and debug. I feel this approach is better suited for larger and more monolithic services as opposed to smaller and more isolated (dare I say micro) services.
 
@@ -43,3 +45,5 @@ I haven't had time yet to do anything here, but this could be a little demo proj
 
 
 ### Testing and quality
+
+I like using a test-first approach where testability enforces a good decoupled design. I would strive for a healthy mix between unit tests (more isolated, faster, less coverage), integration tests (units combined), and end-to-end tests (slow, no mocks, as real as possible, a lot of coverage). As long as you can deploy fast, often and consistently, you probably have enough test coverage.
