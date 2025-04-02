@@ -5,7 +5,7 @@ This repository contains a little showcase with some tech relevant to the Paperd
 A .NET 9 minimal API project based on Clean Architecture.
 
 ### Architecture
-I really like the [C4 model for visualising software architecture](https://c4model.com/) to, well, visualise software architecture. The nice thing about the C4 model is that it is a rather lightweight means of reasoning about architecture at different abstraction levels, but it doesn't prescribe much in the way of notation (like UML does). A simple (partial) C4 diagram of this project with a bunch of assumptions:
+I really like the [C4 model for visualising software architecture](https://c4model.com/) to, well, visualise software architecture. The nice thing about the C4 model is that it is a rather lightweight means of reasoning about architecture at different abstraction levels, but it doesn't prescribe much in the way of notation like UML does. A simple partial C4 diagram of this project with a bunch of assumptions:
 
 * Diagram here
 
