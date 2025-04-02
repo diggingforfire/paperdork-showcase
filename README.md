@@ -38,3 +38,6 @@ Other stuff that I haven't managed to put in here, but I think may be useful dep
 ## Frontend
 
 I haven't had time yet to do anything here, but this could be a little demo project with [Vite](https://vite.dev/guide/) and [Vue](https://vuejs.org/).
+
+
+### Testing and quality
