@@ -17,6 +17,8 @@ Generally, I like the pattern of distinguishing between reads (queries) and writ
 
 The same can be said for using [MediatR](https://github.com/jbogard/MediatR), a great library that implements the mediator pattern and facilitates decoupling. It also adds a layer of indirection however, and makes things a bit harder to follow and debug. I feel this approach is better suited for larger and more monolithic services as opposed to smaller and more isolated (dare I say micro) services.
 
+This project contains a simple example of CQRS with MediatR.
+
 ### Result pattern
 
 ### Data model
