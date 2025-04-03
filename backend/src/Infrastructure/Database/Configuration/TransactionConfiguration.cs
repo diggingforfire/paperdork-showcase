@@ -21,6 +21,11 @@ internal class TransactionConfiguration : IEntityTypeConfiguration<Transaction>
             .IsRequired(false);
 
         builder
+            .Property(transaction => transaction.Timestamp)
+            .HasConversion(dt => DateTime.SpecifyKind(dt, DateTimeKind.Utc), v => v)
+            .IsRequired();
+
+        builder
             .HasMany(transaction => transaction.TransactionDetails)
             .WithOne(transactionDetail => transactionDetail.Transaction);
     }
