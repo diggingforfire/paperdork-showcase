@@ -17,7 +17,7 @@ In general, I like to combine this approach with vertical slices where a project
 
 I like the pattern of distinguishing between reads (queries) and writes (commands). [CQRS](https://martinfowler.com/bliki/CQRS.html) makes this more explicit, but I don't think it's absolutely necessary to achieve this pattern of separation. It depends on the project and team whether you want to enforce this using CQRS, and whether it's worth the extra code and abstraction. 
 
-The same can be said for using [MediatR](https://github.com/jbogard/MediatR), a great library that implements the mediator pattern and facilitates decoupling. It also adds a layer of indirection however, and makes things a bit harder to follow and debug. I feel this approach is better suited for larger and more monolithic services as opposed to smaller and more isolated (dare I say micro) services.
+The same can be said for using [MediatR](https://github.com/jbogard/MediatR), a great library that implements the mediator pattern and facilitates decoupling. It also adds a layer of indirection however, and makes things a bit harder to follow and debug. I feel this approach is better suited for larger and more monolithic services as opposed to smaller and more isolated (dare I say micro) services. In many case, simple services (with an interface on top) will suffice.
 
 This project contains a simple example of CQRS with MediatR.
 
@@ -37,7 +37,8 @@ I am by no means an accountant, but I scaffolded a very simple data model to hav
 Other stuff that I haven't managed to put in here, but I think may be useful depending on context and requirements (as always, 'it depends'):
 
 * [Serilog](https://serilog.net/)
-* [OpenTelemetry](https://opentelemetry.io/)
+* [OpenTelemetry](https://opentelemetry.io/)'
+* Fluent validations combined with endpoint filters to MediatR
 
 ### Summary
 
