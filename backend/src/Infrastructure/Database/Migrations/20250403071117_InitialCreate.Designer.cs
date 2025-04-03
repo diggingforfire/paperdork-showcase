@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Database.Migrations
 {
     [DbContext(typeof(PaperdorkContext))]
-    [Migration("20250331190124_InitialCreate")]
+    [Migration("20250403071117_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -113,7 +113,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasIndex("TransactionId");
 
-                    b.ToTable("TransctionDetails");
+                    b.ToTable("TransactionDetails", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Users.Company", b =>

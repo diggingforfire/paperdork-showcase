@@ -1,8 +1,13 @@
+using Application;
+using Application.Transactions.Details;
+using Application.Transactions.Get;
 using Infrastructure;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
@@ -15,28 +20,19 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/companies/{companyId}/transactions", async (int companyId, ISender sender, CancellationToken cancellationToken) => 
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            37,
-            "Pretty hot"
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    var query = new GetTransactionsQuery(companyId);
+    var transactions = await sender.Send(query, cancellationToken);
+    return Results.Ok(transactions);
+});
+
+app.MapGet("/companies/{companyId}/transactions/{transactionId}/details", async (int companyId, int transactionId, ISender sender, CancellationToken cancellationToken) =>
+{
+    var query = new GetTransactionDetailsQuery(transactionId);
+    var transactionDetails = await sender.Send(query, cancellationToken);
+    return Results.Ok(transactionDetails);
+});
 
 app.Run();
-
-internal sealed record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

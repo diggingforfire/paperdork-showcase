@@ -110,7 +110,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasIndex("TransactionId");
 
-                    b.ToTable("TransctionDetails");
+                    b.ToTable("TransactionDetails", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Users.Company", b =>

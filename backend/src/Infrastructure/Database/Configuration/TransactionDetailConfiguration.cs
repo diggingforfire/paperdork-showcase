@@ -8,6 +8,8 @@ internal class TransactionDetailConfiguration : IEntityTypeConfiguration<Transac
 {
     public void Configure(EntityTypeBuilder<TransactionDetail> builder)
     {
+        builder.ToTable(nameof(Transaction.TransactionDetails));
+
         builder.HasKey(transactionDetail => transactionDetail.Id);
         
         builder

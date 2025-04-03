@@ -68,7 +68,7 @@ namespace Infrastructure.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TransctionDetails",
+                name: "TransactionDetails",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -80,14 +80,14 @@ namespace Infrastructure.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TransctionDetails", x => x.Id);
+                    table.PrimaryKey("PK_TransactionDetails", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TransctionDetails_Accounts_AccountId",
+                        name: "FK_TransactionDetails_Accounts_AccountId",
                         column: x => x.AccountId,
                         principalTable: "Accounts",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_TransctionDetails_Transactions_TransactionId",
+                        name: "FK_TransactionDetails_Transactions_TransactionId",
                         column: x => x.TransactionId,
                         principalTable: "Transactions",
                         principalColumn: "Id",
@@ -100,26 +100,26 @@ namespace Infrastructure.Database.Migrations
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transactions_CompanyId",
-                table: "Transactions",
-                column: "CompanyId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TransctionDetails_AccountId",
-                table: "TransctionDetails",
+                name: "IX_TransactionDetails_AccountId",
+                table: "TransactionDetails",
                 column: "AccountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TransctionDetails_TransactionId",
-                table: "TransctionDetails",
+                name: "IX_TransactionDetails_TransactionId",
+                table: "TransactionDetails",
                 column: "TransactionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Transactions_CompanyId",
+                table: "Transactions",
+                column: "CompanyId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "TransctionDetails");
+                name: "TransactionDetails");
 
             migrationBuilder.DropTable(
                 name: "Accounts");
